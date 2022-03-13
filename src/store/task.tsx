@@ -1,19 +1,26 @@
 
-export interface setTaskInterface {
-  type: string,
-  payload: object
+
+export type task = {
+  title: string
+  desc: string
+  time: string
 }
-export const setTask = (payload: object): setTaskInterface => ({
+
+export type setTaskActionInterface = {
+  type: string,
+  payload: task
+}
+export const setTask = (payload: task): setTaskActionInterface => ({
   type: "SET_TASK",
   payload,
 });
-export interface TaskInitialValues {
-  taskList: Array<object>
+export type State = {
+  taskList: Array<task>
 }
 
-export default (state: TaskInitialValues = {
+export default (state: State = {
   taskList: []
-}, action: setTaskInterface): TaskInitialValues => {
+}, action: setTaskActionInterface): State => {
   switch (action.type) {
     case "SET_TASK":
       return { ...state, taskList: [...state.taskList, { ...action.payload }] };

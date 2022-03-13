@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import Button from '../../Button/Button'
+import TaskCard from '../../components/taskCard/TaskCard'
 import Input from '../../Input/Input'
 import { setTask } from '../../store/task'
+import List from './List'
 
 const AddTask = () => {
     const [title, setTitle] = useState('')
