@@ -26,10 +26,10 @@ const Login = () => {
                     }} />
                 </div>
             </div>
-            <Button handleClick={(event) => {
+            <Button text={"Login"} handleClick={(event) => {
                 localStorage.setItem('email', email)
                 localStorage.setItem('password', password)
-                navigate(`/add-task`)
+                navigate(`/list`)
             }} />
         </form>
     )

@@ -1,29 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './pages/Home';
-import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import AddTask from './pages/task/AddTask';
-import Login from './Login/Login';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import RoutesComp from './utils/Routes';
+import NavBar from './components/NavBar/NavBar';
+import { Container } from 'react-bootstrap';
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Routes>
-          <Route
-            path={`/login`}
-            element={<Login />}
-          />
-          <Route
-            path={`/home`}
-            element={<Home />}
-          />
-          <Route path="/add-task" element={<AddTask />} />
-        </Routes>
+        <NavBar />
+        <Container>
+          <RoutesComp />
+        </Container>
       </Router>
     </Provider>
   );
