@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Routes, Navigate } from 'react-router-dom'
 import Login from '../Login/Login'
 import AddTask from '../pages/task/AddTask'
 import List from '../pages/task/List'
@@ -38,6 +38,7 @@ const RoutesComp = () => {
                         </PrivateRoutes>
                     }
                 />
+                <Route path="*" element={<Navigate to="/list" replace />} />
             </Routes>
         </div>
     )
